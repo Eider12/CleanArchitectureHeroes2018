@@ -11,6 +11,7 @@ import { HeroesRepository } from '../repositories/heroes.repositories';
     providedIn: 'root'
 })
 
+//export class GetHeroesUseCase {
 export class GetHeroesUseCase implements UseCase<void, Heroe> {
 
     constructor( private heroesRepository:  HeroesRepository){}

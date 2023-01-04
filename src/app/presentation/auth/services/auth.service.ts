@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { map, Observable, of, tap } from 'rxjs';
 import { Auth } from '../interfaces/auth.interface';
-import { tap, Observable, of, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private baseUrl: string = environment.baseUrl;
+  private baseUrl: string = 'http://localhost:3000';
+
+  // private baseUrl: string = environment.baseUrl;
   private _auth : Auth | undefined;
 
   get auth() {
     return { ...this._auth }
   }
 
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient ) { }
 
   verificaAutenticacion(): Observable<boolean>{
     if( !localStorage.getItem('token')){
@@ -42,12 +43,42 @@ export class AuthService {
             );
   }
 
-
   logout() {
     this._auth = undefined;
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

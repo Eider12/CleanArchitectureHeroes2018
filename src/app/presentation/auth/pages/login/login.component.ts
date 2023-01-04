@@ -9,7 +9,6 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-
   constructor( private router: Router,
                 private authService: AuthService) { }
 
@@ -19,7 +18,6 @@ export class LoginComponent implements OnInit {
   login(){
     // Ir al backend
     // un usuario
-
     this.authService.login()
         .subscribe( resp => {
           console.log(resp);
@@ -27,7 +25,6 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['./heroes']);
           }
         });
-
   }
 
   ingresarSinLogin() {
