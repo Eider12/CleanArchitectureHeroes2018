@@ -10,6 +10,8 @@ export class HeroeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('Hola desde Heroe');
+    
   }
 
 }
